@@ -1,5 +1,6 @@
 # Gaming Leaderboard System
-
+import sys
+scores = [int(x) for x in sys.argv[1:]]
 class Player:
     def __init__(self, username, game_title, level, scores):
         self.username = username
