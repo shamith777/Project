@@ -1,6 +1,4 @@
 from game import Player   # assuming your main code is saved as leaderboard.py
-import sys
-scores = [int(x) for x in sys.argv[1:]]
 def test_player_rank():
     # Test case: Player with high scores should be "Legend"
     username = "GamerX"
