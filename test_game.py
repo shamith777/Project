@@ -12,7 +12,7 @@ def test_player_rank():
         "Level": level,
         "Scores": scores,
         "Average": sum(scores) / len(scores),
-        "Rank Badge": "🏆 Legend"
+        "Rank Badge": "Legend"
     }
 
     # Create player object
