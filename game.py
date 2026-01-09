@@ -1,5 +1,4 @@
 # Gaming Leaderboard System
-import sys
 
 class Player:
     def __init__(self, username, game_title, level, scores):
