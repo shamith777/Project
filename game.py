@@ -1,6 +1,6 @@
 # Gaming Leaderboard System
 import sys
-scores = [int(x) for x in sys.argv[1:]]
+
 class Player:
     def __init__(self, username, game_title, level, scores):
         self.username = username
@@ -38,16 +38,25 @@ class Player:
 
 # Example usage
 if __name__ == "__main__":
-    # Accept player details
     username = "Shamith"
     game_title = "Valorant"
     level = 99
 
-    print("Enter scores for 3 matches:")
+    # Try to parse scores from command-line arguments
     scores = []
-    for i in range(3):
-        score = int(input(f"Match {i+1} score: "))
-        scores.append(score)
+    for arg in sys.argv[1:]:
+        try:
+            scores.append(int(arg))
+        except ValueError:
+            # Ignore non-numeric args (like pytest flags)
+            pass
+
+    # If no scores passed, fall back to interactive input
+    if not scores:
+        print("Enter scores for 3 matches:")
+        for i in range(3):
+            score = int(input(f"Match {i+1} score: "))
+            scores.append(score)
 
     # Create player object
     player = Player(username, game_title, level, scores)
